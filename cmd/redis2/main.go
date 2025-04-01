@@ -3,8 +3,8 @@ package main
 import (
 	"errors"
 	"fmt"
-	"github.com/keyur/redis2/internal/definitions"
-	"github.com/keyur/redis2/internal/parser"
+	"github.com/keyur-parikh/redis2/internal/definitions"
+	"github.com/keyur-parikh/redis2/internal/parser"
 	"io"
 	"net"
 	"os"

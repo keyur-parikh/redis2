@@ -3,8 +3,8 @@ package response
 import (
 	"errors"
 	"fmt"
-	"github.com/keyur/redis2/internal/definitions"
-	"github.com/keyur/redis2/internal/query_handling"
+	"github.com/keyur-parikh/redis2/internal/definitions"
+	"github.com/keyur-parikh/redis2/internal/query_handling"
 	"strconv"
 	"strings"
 )

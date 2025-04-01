@@ -3,8 +3,8 @@ package query_handling
 import (
 	"errors"
 	"fmt"
-	"github.com/keyur/redis2/internal/definitions"
-	"github.com/keyur/redis2/internal/writer"
+	"github.com/keyur-parikh/redis2/internal/definitions"
+	"github.com/keyur-parikh/redis2/internal/writer"
 	"time"
 )
 

@@ -3,7 +3,7 @@ package writer
 import (
 	"errors"
 	"fmt"
-	"github.com/keyur/redis2/internal/definitions"
+	"github.com/keyur-parikh/redis2/internal/definitions"
 )
 
 func ArrayResponseWriter(response []string, requestContext *definitions.RequestContext) error {

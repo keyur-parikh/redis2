@@ -1,7 +1,7 @@
 package writer
 
 import (
-	"github.com/keyur/redis2/internal/definitions"
+	"github.com/keyur-parikh/redis2/internal/definitions"
 	"testing"
 )
 
