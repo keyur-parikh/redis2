@@ -13,15 +13,16 @@ const (
 	MapType
 )
 
-type Key struct {
-	Type     ValueType
-	Value    interface{}
-	TimeSet  time.Time
+type RedisKey struct {
+	Creation time.Time
 	Duration time.Duration
+}
+type RedisValue struct {
+	Type  ValueType
+	Value interface{}
 }
 
 type CommandInfo struct {
-	Command    string
-	Connection net.Conn
-	KeyData    Key
+	ParsedCommand []string
+	Connection    net.Conn
 }

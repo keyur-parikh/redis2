@@ -8,32 +8,19 @@ import (
 	"time"
 )
 
-func Get(key string, requestContext *definitions.RequestContext) error {
-	dictionary := requestContext.KVStore
+func HandleGet([]string, KVStore *map[string]string) ([]string, error) {
+	dictionary := *KVStore
 	value, ok := dictionary[key]
 	if !ok {
-		if requestContext.Connection != nil {
-			err := writer.InvalidResponseWriter(requestContext)
-			if err != nil {
-				fmt.Println("error writing failure")
-				return err
-			} else {
-				return errors.New("not a valid value")
-			}
-		}
+		return nil, errors.New("Invalid Response")
 	} else {
 		responseContent := []string{value}
-		err := writer.ArrayResponseWriter(responseContent, requestContext)
-		if err != nil {
-			fmt.Println("Error writing: ", err)
-			return err
-		}
+		return responseContent, nil
 	}
-	return nil
 }
 
-func Set(key string, value string, px bool, timer int, requestContext *definitions.RequestContext) error {
-	dictionary := requestContext.KVStore
+func HandleSet(key string, value string, px bool, timer int, KVStore *map[string]string) error {
+	dictionary := *KVStore
 	dictionary[key] = value
 	if requestContext.Connection != nil {
 		err := writer.SuccessResponseWriter(requestContext)
